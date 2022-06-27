@@ -1,20 +1,20 @@
 public class TextBlock {
-    public static void main(String[] args) {
-        String oldStyle = "{\n" +
-                      "    \"id\": 1,\n" +
-                      "    \"firstName\": \"John\",\n" +
-                      "    \"lastName\": \"Doe\",\n" +
-                      "    \"email\": \"john.doe@gmail.com\"\n" +
-                      "}";
-        System.out.println(oldStyle);
+    public String getJsonStringOldStyle() {
+        return "{\n" +
+               "    \"id\": 1,\n" +
+               "    \"firstName\": \"John\",\n" +
+               "    \"lastName\": \"Doe\",\n" +
+               "    \"email\": \"john.doe@gmail.com\"\n" +
+               "}";
+    }
 
-        String newStyle = """
+    public String getJsonStringTextBlock() {
+        return """
                 {
                     "id": 1,
                     "firstName": "John",
                     "lastName": "Doe",
                     "email": "john.doe@gmail.com"
                 }""";
-        System.out.println(newStyle);
     }
 }
