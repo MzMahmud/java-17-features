@@ -6,11 +6,6 @@ import record_examples.Shape;
 
 @SuppressWarnings({"ALL"})
 public class PatternMatchingForSwitch {
-    // valid in JEP 406: Pattern Matching for switch (Preview)
-    // Resources
-    // - https://www.baeldung.com/java-pattern-matching-instanceof
-    // - https://docs.oracle.com/en/java/javase/17/language/pattern-matching-switch-expressions-and-statements.html
-
 
     // examples can be cleaned. see record_examples.Main.showAreaAndParameter method
     private static double getPerimeterWithoutInstanceofPattern(Shape shape) throws IllegalArgumentException {
