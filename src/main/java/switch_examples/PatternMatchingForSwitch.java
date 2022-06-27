@@ -12,6 +12,7 @@ public class PatternMatchingForSwitch {
     // - https://docs.oracle.com/en/java/javase/17/language/pattern-matching-switch-expressions-and-statements.html
 
 
+    // examples can be cleaned. see record_examples.Main.main method
     private static double getPerimeterWithoutInstanceofPattern(Shape shape) throws IllegalArgumentException {
         if (shape instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) shape;
