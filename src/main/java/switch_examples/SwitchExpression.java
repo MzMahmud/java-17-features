@@ -1,28 +1,9 @@
 package switch_examples;
 
-import java.util.List;
-import java.util.function.Consumer;
-
 @SuppressWarnings({"ALL"})
 public class SwitchExpression {
 
-    public static void main(String[] args) {
-        List<Consumer<Fruit>> testFunctions = List.of(
-                SwitchExpression::oldStyleWithoutBreak,
-                SwitchExpression::oldStyleWithBreak,
-                SwitchExpression::withSwitchExpression,
-                SwitchExpression::switchExpressionWithReturnValue
-        );
-        testFunctions.forEach(testFunction -> {
-            testFunction.accept(null);
-            testFunction.accept(Fruit.APPLE);
-            testFunction.accept(Fruit.PEAR);
-            testFunction.accept(Fruit.ORANGE);
-            testFunction.accept(Fruit.AVOCADO);
-        });
-    }
-
-    private static void oldStyleWithoutBreak(Fruit fruit) {
+    public void oldStyleWithoutBreak(Fruit fruit) {
         System.out.printf("-> oldStyleWithoutBreak(%s)\n", fruit);
         switch (fruit) {
             case APPLE, PEAR:
@@ -36,7 +17,7 @@ public class SwitchExpression {
         }
     }
 
-    private static void oldStyleWithBreak(Fruit fruit) {
+    public void oldStyleWithBreak(Fruit fruit) {
         System.out.printf("-> oldStyleWithBreak(%s)\n", fruit);
         switch (fruit) {
             case APPLE, PEAR:
@@ -53,7 +34,7 @@ public class SwitchExpression {
         }
     }
 
-    private static void withSwitchExpression(Fruit fruit) {
+    public void withSwitchExpression(Fruit fruit) {
         System.out.printf("-> withSwitchExpression(%s)\n", fruit);
         switch (fruit) {
             case APPLE, PEAR -> System.out.println("Common fruit");
@@ -63,7 +44,7 @@ public class SwitchExpression {
         }
     }
 
-    private static void switchExpressionWithReturnValue(Fruit fruit) {
+    public void switchExpressionWithReturnValue(Fruit fruit) {
         System.out.printf("-> switchExpressionWithReturnValue(%s)\n", fruit);
         String text = switch (fruit) {
             case APPLE, PEAR -> "Common fruit";
@@ -74,7 +55,7 @@ public class SwitchExpression {
         System.out.println(text);
     }
 
-    enum Fruit {
+    public enum Fruit {
         APPLE,
         PEAR,
         ORANGE,
